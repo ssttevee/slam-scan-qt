@@ -12,9 +12,14 @@ TARGET = SlamScanQt
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += main.cpp \
+    mainwindow.cpp \
+    fileitem.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += \
+    mainwindow.h \
+    diritem.h \
+    fileitem.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    mainwindow.ui
