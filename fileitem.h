@@ -3,17 +3,25 @@
 
 #include <string>
 
+namespace SlamScan {
+class FileItem;
+}
+
 class FileItem
 {
 public:
-	FileItem(const std::string);
-	char* getName() { return name; }
-	char* getExtension() { return ext; }
+    FileItem(const std::string*);
+    FileItem(const char*);
+	void scan();
+	__event void OnScanComplete(FileItem*);
+	char* getName() { return &name; }
+	char* getExtension() { return &ext; }
 	long getSize() { return size; }
 
 private:
-	char* name;
-	char* ext;
+	const char* path;
+	char name;
+	char ext;
 	long size;
 };
 
